@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    processEscapes: true
+                }
+            });
+        </script> <!-- This lets you use $ for inline math. Use \$ for the regular dollar sign. -->
+        <script type="text/javascript" src="../MathJax/MathJax.js?config=default"></script> <!-- Load MathJax. -->
+        <link rel='stylesheet' href='../style.css'>
+    </head> 
+
+    <body>
+        
+        <h2 align='center'>Counting Using One-To-One Correspondence (II): Integer Compositions</h2>
+        
+        <p style='padding-top:1em'>Consider the following natural problem: <b>given a positive integer $n$, how many ways are there to express $n$ as a sum of positive integers?</b> For example, when $n=4$, there are eight such expressions, and they are</p>
+        
+        <p align='center'>4, &nbsp;&nbsp;1+3, &nbsp;&nbsp;2+2, &nbsp;&nbsp;3+1, &nbsp;&nbsp;1+1+2, &nbsp;&nbsp;1+2+1, &nbsp;&nbsp;2+1+1, &nbsp;&nbsp;1+1+1+1.</p>
+        
+        <p>There are two conventions here: first, a number itself is considered a sum (with only one summand), and secondly, order matters, so 1+3 is not considered the same as 3+1. For simplicity, if $a_1$, $a_2$, ..., $a_k$ are positive integers that sum up to $n$, then we call $(a_1,a_2,\ldots,a_k)$ a <em><font color='red'>composition</font></em> of $n$ with $k$ parts. With this terminology, (4) and (2,1,1) are compositions of 4 with one part and three parts, respectively. Note that the problem we consider is now translated into the following:</p>
+        
+        <div id='red-empty-box'>
+            <p align='center'><strong><u>Problem 1</u>: Given a positive integer $n$, how many compositions of $n$ are there?</strong></p>
+        </div>
+            
+        <p>We shall answer Problem 1 by reducing it to the following simpler problem.</p>
+            
+        <p align='center'><strong><u>Problem 2</u>: For a fixed integer $k$, how many compositions of $n$ with $k$ parts are there?</strong></p>
+        
+        <p>Indeed, because any composition of $n$ has at least one part and at most $n$ parts, if we know the answer to Problem 2 for $k=1,2,\ldots,n$, then by adding all these answers up, we can get the answer for Problem 1. For example, any composition of 4 must contain either one, two, three, or four parts. If we know that the number of compositions of 4 with one, two, three and four parts are 1, 3, 3 and 1, respectively, then the number of compositions of 4 is 1+3+3+1=8.</p>
+        
+        <p>OK, so Problem 1 is reduced to Problem 2, but how is it any easier than Problem 1? Notice that a composition of $n$ is just a positive integer solution to the equation</p> 
+        
+        <p align='center'>$x_1+x_2+\ldots+x_k=n$</p>
+        
+        <p>with unknown $(x_1,x_2,\ldots,x_k)$. If you have read the <a href='nonneg-sol.html'>previous part</a>, you may notice that this is the same equation we talked about there. Although we considered a slightly different type of solutions (nonnegative solutions instead of positive ones), what we have done there could still provide a bridge to our current destination. Let $(a_1,a_2,\ldots,a_k)$ be a composition of $n$. For each $i$, let $b_i := a_i-1$. Then $$b_1+b_2+\ldots+b_k = (a_1-1)+(a_2-1)+\ldots+(a_k-1) = (a_1+a_2+\ldots+a_k)-k = n-k,$$ so $(b_1, b_2, \ldots, b_k)$ is a nonnegative solution to</p>
+        
+        <div id='equation-marker'>(1)</div>
+        <p align='center'>$x_1+x_2+\ldots+x_k = n-k$.</p>
+        
+        <p>Conversely, if $(b_1,b_2,\ldots,b_k)$ is a solution of nonnegative integers to equation (1), then by letting $a_i = b_i+1$ for each $i$, it can be checked similarly that $a_1$, $a_2$, ..., $a_k$ are positive integers that sum up to $n$, so $(a_1,a_2,\ldots,a_k)$ is a composition of $n$. These correspondences for the case $n=4$ and $k=3$ are demonstrated as follows.</p>
+        
+        <p align='center'>$x_1+x_2+x_3=4 \quad\rightleftharpoons\quad x_1+x_2+x_3=1$<br>$(1,1,2) \quad\rightleftharpoons\quad (0,0,1)$<br>$(1,2,1) \quad\rightleftharpoons\quad (0,1,0)$<br>$(2,1,1) \quad\rightleftharpoons\quad (1,0,0)$</p>
+        
+        <p>Note that the left-hand side contains all the compositions of 4 with three parts, while the right-hand side contains all solutions of nonnegative integers to equation (1). In fact, these rules above define a one-to-one correpondence between the set of all compositions of $n$ with $k$ parts and the set of all nonnegative integer solutions to equation (1). So, the number of compositions of $n$ with $k$ parts is equal to the number of nonnegative integer solutions to equation (1), which by <a href='nonneg-sol.html'>part (I) of the article</a> is equal to $${(n-k)+k-1 \choose k-1},$$ which equals $${n-1 \choose k-1},$$ so this is the answer to Problem 2. Since $k$ is the number of parts in a composition of $n$, we have $1 \leq k \leq n$. Summing all the binomial coefficients above over all the possible values of $k$ gives us the answer to Problem 1: $$\sum_{k=1}^{n} {n-1 \choose k-1} = {n-1 \choose 0} + {n-1 \choose 1} + \ldots + {n-1 \choose n-1}.$$ However, while this answer is correct, it is not so satisfactory since it is somewhat messy. Fortunately, this long sum can be simplified with the binomial theorem, which states $$(x+y)^{n-1} = {n-1 \choose 0}x^0 y^{n-1} + {n-1 \choose 1}x^1 y^{n-2} + \ldots + {n-1 \choose n-1}x^{n-1}y^0.$$ Note that if we set both $x$ and $y$ above to 1, then we have $$(1+1)^{n-1} =  {n-1 \choose 0}1^0 1^{n-1} + {n-1 \choose 1}1^1 1^{n-2} + \ldots + {n-1 \choose n-1}1^{n-1}1^0 = {n-1 \choose 0} + {n-1 \choose 1} + \ldots + {n-1 \choose n-1},$$ and so we just proved that $$2^{n-1} = {n-1 \choose 0} + {n-1 \choose 1} + \ldots + {n-1 \choose n-1}.$$ (There is a combinatorial way to explain the equation above without using the binomial theorem, but I will leave that to you as a fun exercise.)</p>
+        
+        <p>Note that the long sum we have on the right is the answer to Problem 1 we seeked to simplify, and it is equal to $2^{n-1}$! (This exclamation mark is not for factorial...) So in summary,</p>
+        
+        <div id='red-empty-box'>
+            <p align='center'><strong>For a positive integer $n$, there are $2^{n-1}$ compositions of $n$.</strong></p>
+        </div>
+
+    </body>
+
+</html>

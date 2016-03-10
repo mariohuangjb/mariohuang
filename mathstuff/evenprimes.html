@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    processEscapes: true
+                }
+            });
+        </script> <!-- This lets you use $ for inline math. Use \$ for the regular dollar sign. -->
+        <script type="text/javascript" src="../MathJax/MathJax.js?config=default"></script> <!-- Load MathJax. -->
+        <link rel='stylesheet' href='../style.css'>
+    </head> 
+    <!-- /head is the preamble section that loads packages, setting styles etc. -->
+
+    <body>
+        
+        <h2 align='center'>The Existence of Infinitely Many Even Primes: A "Proof"</h2>
+        
+        <p style='padding-top:1em'>Knowledge about elementary properties of divisibility and prime numbers is assumed in this article.</p>
+
+        <p>Let's recall (or learn) a famous theorem of Euclid and his proof.</p>
+        
+        <div id='red-empty-box'>
+            
+            <p style='margin-top:0'><b>Theorem</b>. There are infintely many primes.</p>
+        
+            <p><i>Proof</i>:</p>
+            <ul>
+                <li>Suppose there are only finitely many primes. Call them $p_1$, $p_2$, ..., $p_n$.</li>
+                <li>Consider the number $Q:=(p_1 \cdot p_2 \cdot \ldots \cdot p_n) + 1$.</li>
+                <li>By prime factorization, there exists a prime $p$ dividing $Q$.</li>
+                <li>The prime $p$ does not divide $p_1 \cdot p_2 \cdot \ldots \cdot p_n$, since otherwise $p$ would divide the difference $Q - p_1 \cdot p_2 \cdot \ldots \cdot p_n$, which is 1, but $p$ being a prime cannot divide 1.</li>
+                <li>So $p$ is not any prime on the list $p_1$, $p_2$, ..., $p_n$, since otherwise it would divide their product.</li>
+                <li>So we found a prime that is not on the list of all primes, which is a contradiction.</li>
+                <li>Therefore, it is impossible that there are only finitely many primes.</li>
+            </ul>
+        </div>
+        
+        <p>By modifying Euclid's proof a little bit, we can show a stronger statement: there are infinitely many primes that are even!</p>
+        
+        <div id='red-empty-box'>
+        
+            <p style='margin-top:0'><b>"Theorem"</b>. There are infintely many even primes.</p>
+        
+            <p><i>Proof</i>:</p>
+            <ul>
+                <li>Suppose there are only finitely many even primes. Let $p_1$, $p_2$, ..., $p_n$ denote all the even primes that are not equal to 2.</li>
+                <li>Consider the number $Q:=(p_1 \cdot p_2 \cdot \ldots \cdot p_n) + 2$.</li>
+                <li>Being a product of even numbers, $p_1 \cdot p_2 \cdot \ldots \cdot p_n$ must be even. So $Q$ must also be even.</li>
+                <li>Hence, in the prime factorization of $Q$, one of the primes must be even, say $p$.</li>
+                <li>If $p=2$, then since $p$ divides $Q$, it follows that $p$ must also divide $Q-p$, which is $Q-2=p_1 \cdot p_2 \cdot \ldots \cdot p_n$. This would mean that $p=2$ is one of the primes $p_1$, $p_2$, ..., $p_n$, which is a contradiction since all these primes are greater than 2. Hence $p \ne 2$.</li>
+                <li>If $p$ is one of the primes $p_1$, $p_2$, ..., $p_n$, then $p$ would divide their product, and so it would divide $Q-p_1 \cdot p_2 \cdot \ldots \cdot p_n$, which is 2, and this is impossible because $p>2$. Hence  $p$ cannot be one of $p_1$, $p_2$, ..., $p_n$.</li>
+                <li>So $p$ is an even prime that is not on the list of all even primes, which is a contradiction.</li>
+                <li>Therefore, it is impossible that there are only finitely many even primes.</li>
+            </ul>
+        </div>
+        
+        <p>Of course, as we all know, this second "theorem" above is false. But I will leave finding the fallacy in the "proof" to you.</p>
+        
+    </body>
+
+</html>

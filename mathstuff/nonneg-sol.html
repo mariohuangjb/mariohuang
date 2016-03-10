@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    processEscapes: true
+                }
+            });
+        </script> <!-- This lets you use $ for inline math. Use \$ for the regular dollar sign. -->
+        <script type="text/javascript" src="../MathJax/MathJax.js?config=default"></script> <!-- Load MathJax. -->
+        <link rel='stylesheet' href='../style.css'>
+    </head> 
+
+    <body>
+        
+        <h2 align='center'>Counting Using One-To-One Correspondence (I): Distributing Peaches</h2>
+        
+        <p style='padding-top:1em'>Suppose that we have $n$ identical peaches and $k$ different people. How many ways are there to distribute the peaches? This is the same as asking the number of nonnegative integer solutions $(x_1, x_2, \ldots, x_k)$ to the equation $$x_1 + x_2 + \ldots + x_k = n,$$ where $x_i$ represents the number of peaches the $i$-th person receives. For example, when $n=4$ and $k=3$, the equation becomes</p>
+        
+        <p align='center'>$x_1 + x_2 + x_3 = 4$,</p>
+        
+        <p>and all the nonnegative integer solutions to it are:</p>
+        
+        <p align='center'>(0,0,4) &nbsp;&nbsp; (0,1,3) &nbsp;&nbsp; (0,2,2) &nbsp;&nbsp; (0,3,1) &nbsp;&nbsp; (0,4,0)<br>(1,0,3) &nbsp;&nbsp; (1,1,2) &nbsp;&nbsp; (1,2,1) &nbsp;&nbsp; (1,3,0) &nbsp;&nbsp; (2,0,2)<br>&nbsp;(2,1,1) &nbsp;&nbsp; (2,2,0) &nbsp;&nbsp; (3,0,1) &nbsp;&nbsp; (3,1,0) &nbsp;&nbsp; (4,0,0).</p>
+            
+        <p>These solutions represent all 15 ways of distributing 4 identical peaches to 3 people. How do we know that there are only 15 solutions though? Let's count. Say we decide to give 2, 1 and 1 peaches to the first, second and third person, respectively, which corresponds to the solution (2,1,1). We can do the following. First, count two peaches, and put a stick indicating that these go to the first person, then count another peach, and put a stick showing that this peach goes to the second person, and then the remaining peach goes to the third person. Pictorially, if we use &hearts; to represent a peach and a vertical bar to represent a stick, then our distribution scheme (2,1,1) is represented by &hearts;&hearts;|&hearts;|&hearts;. Two other examples showing this correspondence are</p>
+        
+        <p align='center'>(3,1,0) $\rightleftharpoons$ &hearts;&hearts;&hearts;|&hearts;| &nbsp;&nbsp; and &nbsp;&nbsp; (0,2,2) $\rightleftharpoons$ |&hearts;&hearts;|&hearts;&hearts;.</p>
+        
+        <p>Observe that every distribution scheme is represented uniquely by such a heart-bar diagram, and vice versa. In other words, there is a one-to-one correspondence between the set all distribution schemes and the set of all such heart-bar diagrams, so the number of nonnegative integer solutions to $x_1 + x_2 + x_3 = 4$ (which represent the distribution schemes) can be obtained by counting the heart-bar diagrams with four hearts and two bars! (This is because we have four peaches and we need two bars to separate three people.) Of course, it is just the number of ways to choose two slots out of six to put the bars, which is $${6 \choose 2} = 15,$$ so our 15 solutions above are indeed complete!</p>
+        
+        <p>When working with the equation $x_1 + x_2 + \ldots + x_k = n$ in general, with the same reasoning, we need $k-1$ bars to separate the $n$ hearts (or peaches) for $k$ unknowns (or people), so the number of nonnegative integer solutions to the equation is equal to the number of heart-bar diagrams with $n$ hearts and $k-1$ bars. In summary,</p>
+        
+        <div id='red-empty-box'>
+            <p align='center'>If $n$ and $k$ are positive integers, then the number of nonnegative integer solutions to the equation $x_1 + x_2 + \ldots + x_k = n$ is $${n+k-1 \choose k-1}.$$</p>
+        </div>
+
+    </body>
+
+</html>

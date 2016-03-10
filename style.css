@@ -1,0 +1,8 @@
+body{width:920px; margin:auto auto 2em; overflow:auto; background-image:url('pink_rice.jpg');} /* This is the way to make comments in css. */
+nav{float:left; width:160px; list-style-type:none; padding-top:1em} /* list-style-type specifies the bullet type for the list inside the element. */
+#navli{margin-bottom:3px} /* padding or margin can have up to four values, starting from top going clockwise. */
+#maintext{float:left; width:730px; margin-left:30px}
+
+/*The following are for math.*/
+#red-empty-box{padding:10px; border-width:2px; border-color:red; border-style:solid} /*Make an empty box with red border.*/
+#equation-marker{float:right; margin-right:2em}
