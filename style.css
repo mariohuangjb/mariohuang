@@ -6,3 +6,7 @@ nav{float:left; width:160px; list-style-type:none; padding-top:1em} /* list-styl
 /*The following are for math.*/
 #red-empty-box{padding:10px; border-width:2px; border-color:red; border-style:solid} /*Make an empty box with red border.*/
 #equation-marker{float:right; margin-right:2em}
+
+/*The following are for gaming*/
+div.logos{margin-left:25px; float:left; width:340px}
+img.gamelogo{margin-top:20px}
