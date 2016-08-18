@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    processEscapes: true
+                }
+            });
+        </script> <!-- This lets you use $ for inline math. Use \$ for the regular dollar sign. -->
+        <script type="text/javascript" src="../MathJax/MathJax.js?config=default"></script> <!-- Load MathJax. -->
+        <link rel='stylesheet' href='../style.css'>
+    </head> 
+
+    <body>
+        
+        <h2 align='center'>The Binomial Theorem</h2>
+        
+        <p style='padding-top:1em'>In this article, we will see an informal explanation on the binomial theorem. This important theorem of mathematics states that $$(x+y)^n = \sum_{i=0}^{n}{n \choose i}x^{i}y^{n-i} = {n \choose 0}x^0 y^{n} + {n \choose 1}x^1 y^{n-1} + \ldots + {n \choose n}x^{n}y^0,$$ where $n$ is any nonnegative integer. Although $x$ and $y$ are often picked to be real numbers, they can be anything from a set where addition and multiplication obeying the "usual" laws are defined. Let's consider the case where $n=3$. By expanding $(x+y)^3$ using the distributive law and combining like terms using the commutative law, we have $$(x+y)^3 = (x+y)(x+y)(x+y) = (xx+xy+yx+yy)(x+y) = (xx+xy+yx+yy)x + (xx+xy+yx+yy)y \\ = (xxx+xyx+yxx+yyx)+(xxy+xyy+yxy+yyy) = x^3 + 3x^2y + 3xy^2 + y^3.$$</p>
+        
+        <p>Essentially, when expanding $(x+y)^3$, we have three copies of $(x+y)$, and from each copy we need to pick a symbol ($x$ or $y$) to multiply together. For example, if we pick $x$ from the first and second copy and pick $y$ from the third copy, when we multiply them together, we get $xxy$. The term $3x^2y$ in the last line corresponds to $xxy$, $xyx$ and $yxx$, the three scenarios arising from picking two $x$'s and one $y$ from the three copies. In general, when expanding $(x+y)^n$, we have $n$ copies of $(x+y)$. Each term in the final expansion must have the form $x^{i}y^{n-i}$ (where $0 \le i \le n$) corresponding to picking $x$ from $i$ of the $n$ copies and picking $y$ from the remaining $n-i$ copies. The number of choosing $i$ copies from $n$ copies is of course ${n \choose i}$, and this is the number of occurances of $x^{i}y^{n-i}$ in the final expansion. Therefore, $$(x+y)^n = \sum_{i=0}^{n}{n \choose i}x^{i}y^{n-i} = {n \choose 0}x^0 y^{n} + {n \choose 1}x^1 y^{n-1} + \ldots + {n \choose n}x^{n}y^0.$$</p>
+
+    </body>
+
+</html>

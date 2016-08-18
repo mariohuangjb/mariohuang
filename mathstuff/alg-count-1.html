@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    processEscapes: true
+                }
+            });
+        </script> <!-- This lets you use $ for inline math. Use \$ for the regular dollar sign. -->
+        <script type="text/javascript" src="../MathJax/MathJax.js?config=default"></script> <!-- Load MathJax. -->
+        <link rel='stylesheet' href='../style.css'>
+    </head> 
+
+    <body>
+        
+        <h2 align='center'>Counting Using Algebra (I)</h2>
+        
+        <p style='padding-top:1em'><a href='int-comp.html'>Last time</a>, we talked about counting integer compositions using one-to-one correspondence. If we are to count integer compositions with certain restrictions, it may not easy to find a suitable correspondence. Here we discuss a different way to count. Consider the following problem.</p>
+        
+        <div id='red-empty-box'>
+            <p align='center'>Given a nonnegative integer $n$, how many compositions of $n$ with all parts being $1$ or $2$ are there?</p>
+        </div>
+        
+        <p>For example, when $n=5$, all such compositions are</p>
+        
+        <p align='center'>(1,1,1,1,1) &nbsp;&nbsp; (2,1,1,1) &nbsp;&nbsp; (1,2,1,1) &nbsp;&nbsp; (1,1,2,1) &nbsp;&nbsp; (1,1,1,2) &nbsp;&nbsp; (2,2,1) &nbsp;&nbsp; (2,1,2) &nbsp;&nbsp; (1,2,2),</p>
+        
+        <p>and there are 8 of them. In particular, there are 3 of them with exactly three parts.</p>
+
+    </body>
+
+</html>
